@@ -1,0 +1,102 @@
+[
+    {
+        "name_address": "0x000DE3A8",
+        "palette_address": "0x000DA96C",
+        "name_length": 10,
+        "name": "Pastel Mix",
+        "palette": [
+            "0xFFFFA5",
+            "0xFF9494",
+            "0x9494FF",
+            "0x000000",
+            "0xFFFFA5",
+            "0xFF9494",
+            "0x9494FF",
+            "0x000000",
+            "0xFFFFA5",
+            "0xFF9494",
+            "0x9494FF",
+            "0x000000"
+        ]
+    },
+    {
+        "name_address": "0x000DE39C",
+        "palette_address": "0x000DA99C",
+        "name_length": 8,
+        "name": "Inverted",
+        "palette": [
+            "0x000000",
+            "0x008484",
+            "0xFFDE00",
+            "0xFFFFFF",
+            "0x000000",
+            "0x008484",
+            "0xFFDE00",
+            "0xFFFFFF",
+            "0x000000",
+            "0x008484",
+            "0xFFDE00",
+            "0xFFFFFF"
+        ]
+    },
+    {
+        "name_address": "0x000DE3D8",
+        "palette_address": "0x000DA78C",
+        "name_length": 10,
+        "name": "Dark Green",
+        "palette": [
+            "0xFFFFFF",
+            "0x7BFF31",
+            "0x0063C5",
+            "0x000000",
+            "0xFFFFFF",
+            "0xFF8484",
+            "0x943A3A",
+            "0x000000",
+            "0xFFFFFF",
+            "0xFF8484",
+            "0x943A3A",
+            "0x000000"
+        ]
+    },
+    {
+        "name_address": "0x000DE3E4",
+        "palette_address": "0x000DA66C",
+        "name_length": 9,
+        "name": "Dark Blue",
+        "palette": [
+            "0xFFFFFF",
+            "0x8C8CDE",
+            "0x52528C",
+            "0x000000",
+            "0xFFFFFF",
+            "0xFF8484",
+            "0x943A3A",
+            "0x000000",
+            "0xFFFFFF",
+            "0xFFAD63",
+            "0x843100",
+            "0x000000"
+        ]
+    },
+    {
+        "name_address": "0x000DE3FC",
+        "palette_address": "0x000DA188",
+        "name_length": 13,
+        "name": "Classic Green",
+        "palette": [
+            "0x9BBC0F",
+            "0x8BAC0F",
+            "0x306230",
+            "0x0F380F",
+            "0x9BBC0F",
+            "0x8BAC0F",
+            "0x306230",
+            "0x0F380F",
+            "0x9BBC0F",
+            "0x8BAC0F",
+            "0x306230",
+            "0x0F380F"
+        ]
+    }
+]

@@ -74,7 +74,7 @@ def generate_vanilla_json():
     data = {
     'name_address': '0x000DE3A8',
     'palette_address': '0x000DA96C',
-    'name_length': 10,
+    'name_length': 11,
     'name': "Pastel Mix",
     'palette': ['0xFFFFA5', '0xFF9494', '0x9494FF', '0x000000', 
                 '0xFFFFA5', '0xFF9494', '0x9494FF', '0x000000', 
@@ -82,10 +82,43 @@ def generate_vanilla_json():
     }
     palettes.append(data)
 
+    data = {
+    'name_address': '0x000DE3B4',
+    'palette_address': '0x000DA624',
+    'name_length': 3,
+    'name': "Red",
+    'palette': ['0xFFFFFF', '0xFF8484', '0x943A3A', '0x000000', 
+                '0xFFFFFF', '0x7BFF31', '0x008400', '0x000000', 
+                '0xFFFFFF', '0x63A5FF', '0x0000FF', '0x000000']
+    }
+    palettes.append(data)
+
+    data = {
+    'name_address': '0x000DE3B4',
+    'palette_address': '0x000DA9E4',
+    'name_length': 7,
+    'name': "Orange",
+    'palette': ['0xFFFFFF', '0xFFFF00', '0xFF0000', '0x000000', 
+                '0xFFFFFF', '0xFFFF00', '0xFF0000', '0x000000', 
+                '0xFFFFFF', '0xFFFF00', '0xFF0000', '0x000000']
+    }
+    palettes.append(data)
+
+    data = {
+    'name_address': '0x000DE3C0',
+    'palette_address': '0x000DA594',
+    'name_length': 7,
+    'name': "Yellow",
+    'palette': ['0xFFFFFF', '0xFFFF00', '0x7B4A00', '0x000000', 
+                '0xFFFFFF', '0x63A5FF', '0x0000FF', '0x000000', 
+                '0xFFFFFF', '0x7BFF31', '0x008400', '0x000000']
+    }
+    palettes.append(data)
+
     data =  {
     'name_address': '0x000DE39C',
     'palette_address': '0x000DA99C',
-    'name_length': 8,
+    'name_length': 11,
     'name': "Inverted",
     'palette': ['0x000000', '0x008484', '0xFFDE00', '0xFFFFFF',
                 '0x000000', '0x008484', '0xFFDE00', '0xFFFFFF',
@@ -96,7 +129,7 @@ def generate_vanilla_json():
     data =  {
     'name_address': '0x000DE3D8',
     'palette_address': '0x000DA78C',
-    'name_length': 10,
+    'name_length': 11,
     'name':"Dark Green",
     'palette': ['0xFFFFFF', '0x7BFF31', '0x0063C5', '0x000000',
               '0xFFFFFF', '0xFF8484', '0x943A3A', '0x000000',
@@ -107,7 +140,7 @@ def generate_vanilla_json():
     data =  {
     'name_address': '0x000DE3E4',
     'palette_address': '0x000DA66C',
-    'name_length': 9,
+    'name_length': 11,
     'name': "Dark Blue",
     'palette': ['0xFFFFFF', '0x8C8CDE', '0x52528C', '0x000000',
               '0xFFFFFF', '0xFF8484', '0x943A3A', '0x000000',
@@ -118,7 +151,7 @@ def generate_vanilla_json():
     data =  {
     'name_address': '0x000DE3F0',
     'palette_address': '0x000DA7A4',
-    'name_length': 10,
+    'name_length': 11,
     'name': "Dark Brown",
     'palette': ['0xFFE6C5', '0xCE9C84', '0x846B29', '0x5A3108',
               '0xFFFFFF', '0xFFAD63', '0x843100', '0x000000',
@@ -128,7 +161,7 @@ def generate_vanilla_json():
     data =  {
     'name_address': '0x000DE3FC',
     'palette_address': '0x000DA188',
-    'name_length': 13,
+    'name_length': 15,
     'name': "Classic Green",
     'palette': ['0x9BBC0F', '0x8BAC0F', '0x306230', '0x0F380F',
               '0x9BBC0F', '0x8BAC0F', '0x306230', '0x0F380F',
@@ -241,5 +274,5 @@ def main():
         manual_entry()
     
 if __name__ == "__main__":
-    main()
-    # generate_vanilla_json()
+    # main()
+    generate_vanilla_json()

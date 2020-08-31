@@ -94,7 +94,7 @@ def generate_vanilla_json():
     palettes.append(data)
 
     data = {
-    'name_address': '0x000DE3B4',
+    'name_address': '0x000DE3B8',
     'palette_address': '0x000DA9E4',
     'name_length': 7,
     'name': "Orange",

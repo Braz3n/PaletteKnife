@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Binary file URL
+BINARY_URL='https://github.com/Steveice10/GameYob/releases/download/1.0.8/GameYob.zip'
+ZIP_FILE_NAME="GameYob.zip"
+UNZIPPED_DIR="3ds-arm"
+ELF_FILE_NAME="GameYob.elf"
+
 # Make sure that we're in the same directory as the script.
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
 cd ${DIR}
@@ -11,6 +17,21 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 else
     base64 -d <<< ${header}
 fi
+echo
+echo
+if [ ! -f "${ELF_FILE_NAME}" ]; then
+    echo "${ELF_FILE_NAME} not found."
+    echo "Downloading replacement."
+    # curl -L "${BINARY_URL}" -o "${ZIP_FILE_NAME}"
+    echo
+    echo "Download complete. Extracting contents..."
+    unzip -qq "${ZIP_FILE_NAME}" 
+    cp "${UNZIPPED_DIR}/${ELF_FILE_NAME}" "./"
+    rm -r "${UNZIPPED_DIR}"
+    echo "Extraction complete."
+    echo "Proceeding to binary manipulation."
+fi
+
 echo
 echo
 echo

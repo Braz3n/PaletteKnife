@@ -22,7 +22,7 @@ echo
 if [ ! -f "${ELF_FILE_NAME}" ]; then
     echo "${ELF_FILE_NAME} not found."
     echo "Downloading replacement."
-    # curl -L "${BINARY_URL}" -o "${ZIP_FILE_NAME}"
+    curl -L "${BINARY_URL}" -o "${ZIP_FILE_NAME}"
     echo
     echo "Download complete. Extracting contents..."
     unzip -qq "${ZIP_FILE_NAME}" 
@@ -39,6 +39,10 @@ python3 elf_edit.py  # Edit the binary file.
 echo
 echo "Compiling new .cia file from modified binary."
 chmod +x ./makerom  # Ensure that we can actually execute the compiler application.
-./makerom -f cia -o GameYob.cia -elf GameYob.elf -DAPP_ENCRYPTED=false -rsf ref/template.rsf -target t -exefslogo -icon ref/icon.icn -banner ref/banner.bnr -major 1 -minor 0 -micro 8 -DAPP_TITLE="GameZob" -DAPP_PRODUCT_CODE="CTR-P-GYOB" -DAPP_UNIQUE_ID="0xF8003" -DAPP_SYSTEM_MODE="64MB" -DAPP_SYSTEM_MODE_EXT="Legacy" -DAPP_CATEGORY="Application" -DAPP_USE_ON_SD="true" -DAPP_MEMORY_TYPE="Application" -DAPP_CPU_SPEED="268MHz" -DAPP_ENABLE_L2_CACHE="false" -DAPP_VERSION_MAJOR="1" -logo "ref/logo.bcma.lz"
-echo "Compilation complete."
-echo "Gameyob.cia now ready for installation."
+if ./makerom -f cia -o GameYob.cia -elf GameYob.elf -DAPP_ENCRYPTED=false -rsf ref/template.rsf -target t -exefslogo -icon ref/icon.icn -banner ref/banner.bnr -major 1 -minor 0 -micro 8 -DAPP_TITLE="GameZob" -DAPP_PRODUCT_CODE="CTR-P-GYOB" -DAPP_UNIQUE_ID="0xF8003" -DAPP_SYSTEM_MODE="64MB" -DAPP_SYSTEM_MODE_EXT="Legacy" -DAPP_CATEGORY="Application" -DAPP_USE_ON_SD="true" -DAPP_MEMORY_TYPE="Application" -DAPP_CPU_SPEED="268MHz" -DAPP_ENABLE_L2_CACHE="false" -DAPP_VERSION_MAJOR="1" -logo "ref/logo.bcma.lz"
+then    
+    echo "Compilation complete."
+    echo "Gameyob.cia now ready for installation."
+else
+    echo "Something went wrong during "
+fi

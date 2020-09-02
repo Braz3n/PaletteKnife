@@ -13,7 +13,7 @@ PALETTE_JSON_FILE_NAME = "palettes.json"  # We can also use a .json file instead
 DEFAULT_PALETTE_COLOUR_ADDRESS = 0x000DA96C  # Start location of the target colour palete in memory.
 DEFAULT_PALETTE_NAME_ADDRESS = 0x000DE3A8  # Start location of the colour palete name in memory.
 DEFAULT_PALETTE_NAME_MAX_LENGTH = 10
-DEFAULT_PALETTE_NAME_VALUE = "{name:<{width}}".format(name="Chris' Mix", width=DEFAULT_PALETTE_NAME_MAX_LENGTH)
+DEFAULT_PALETTE_NAME_VALUE = "{name:\x00<{width}}".format(name="Chris' Mix", width=DEFAULT_PALETTE_NAME_MAX_LENGTH)
 
 def TO5BIT(x):
     # Perform the arcane 5-bit compression required for the Gameboy Color.
@@ -193,7 +193,7 @@ def modify_binary(palette_name_address, palette_color_address, palette_name_valu
         binary_file.write(palette_memory_bytes)
         # Update the palette name.
         binary_file.seek(palette_name_address, 0)
-        binary_file.write(bytes(palette_name_value, 'utf-8'))
+        binary_file.write(bytearray(palette_name_value, 'utf-8'))
 
 def load_from_json():
     # Load in palette information from a JSON file instead of stdin.
@@ -217,7 +217,7 @@ def load_from_json():
             rgb_colors.append(sanitize_user_input(color))
 
         # Format the new string and colour memory.
-        new_name = "{name:<{width}}".format(name=palette['name'], width=palette['name_length'])
+        new_name = "{name:\x00<{width}}".format(name=palette['name'], width=palette['name_length'])
         new_memory, palette_hex_string = generate_memory(rgb_colors)
         print("Overwriting palette name at address 0x{:04X} with \"{}\"".format(name_address, new_name))
         print("New palette hexadecimal string: 0x{}".format(palette_hex_string))

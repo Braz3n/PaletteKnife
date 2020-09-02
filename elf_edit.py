@@ -172,19 +172,6 @@ def generate_vanilla_json():
     with open(PALETTE_JSON_FILE_NAME, 'w') as json_file:
         json.dump(palettes, json_file)
 
-def find_binary():
-    # Check that we actually have the binary file.
-    if not os.path.exists(BINARY_FILE_NAME):
-        print("{} file not found. Downloading...".format(BINARY_FILE_NAME))
-        urllib.request.urlretrieve(BINARY_ZIP_URL, 'GameYob.zip')
-        print("Zip archive downloaded.")
-        print("Extracting...")
-        with zipfile.ZipFile("GameYob.zip", 'r') as zip_ref:
-            with zip_ref.open('3ds-arm/GameYob.elf') as compressed, open(BINARY_FILE_NAME, 'wb') as binary:
-                shutil.copyfileobj(compressed, binary)
-        print("Complete. Now cleaning up leftover files.")
-        os.remove("GameYob.zip")
-
 def modify_binary(palette_name_address, palette_color_address, palette_name_value, palette_memory_bytes):
     # Update the palette name and address in the program binary.
     with open(BINARY_FILE_NAME, "rb+") as binary_file:
@@ -222,8 +209,6 @@ def load_from_json():
         print("Overwriting palette name at address 0x{:04X} with \"{}\"".format(name_address, new_name))
         print("New palette hexadecimal string: 0x{}".format(palette_hex_string))
 
-        find_binary()  # Fetch the binary if it doesn't already exist.
-
         modify_binary(name_address, palette_address, new_name, new_memory)
     
     print("Successfully updated the GameYob binary.")
@@ -258,8 +243,6 @@ def manual_entry():
                     palette4, palette5, palette6, palette7,
                     palette8, palette9, palette10, palette11]
     new_memory, palette_hex_string = generate_memory(new_colours)
-
-    find_binary()  # Fetch the program binary if it's not already here.
 
     print("Now editing the GameYob binary.")
     print("New palette name: {}".format(DEFAULT_PALETTE_NAME_VALUE))
